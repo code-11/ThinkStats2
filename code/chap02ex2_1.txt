@@ -1,0 +1,15 @@
+chap02ex2_1
+
+Brendan Ritter
+
+If I wanted a spot on the evening news, I would report the mean of he two pregnancy lengths bu only report up to the tenths place, because no one has time for the hundreds and beyond, and it seems to differ more. Our eyes see different numbers and assume a large difference especially if the units are unfarmilliar like weeks as opposed to hours. 
+
+If I wanted to reassure an anxious patient, I would give the standard deviation because if their pregnancy looked like it was falling within this window they would not feel worried becuase it would be "normal" as compared to other live births.
+
+I am Cecil Adams:
+
+We had anxious people interested in whether first babies arrive late. Toward this end, we consulted a study made by the Center for Disease Control called the National Survey of Family Growth (or NSFG). This study gathers information on a wide variety of topics, one of which includes pregnancy durations.
+
+Using this data we found that the pregnancy length for first babies was 38.601 weeks, while for other babies (not first ones) it was 38.523. Looking at these two numbers one might at first think a large difference between them, perhaps on the order of days. However, that difference is only about 13 hours.
+
+Furthermore, the difference in means was found to be only .029 standard deviations which means the difference is truely tiny.

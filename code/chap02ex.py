@@ -12,6 +12,9 @@ from operator import itemgetter
 
 import first
 import thinkstats2
+import queue
+import nsfg
+import math
 
 
 def Mode(hist):
@@ -21,8 +24,12 @@ def Mode(hist):
 
     returns: value from Hist
     """
-    return 0
-
+    mode_candidate=(0,0)
+    for pair in hist.Items():
+        if mode_candidate[1]<pair[1]:
+            mode_candidate=pair
+    return mode_candidate[0]
+    # return 0
 
 def AllModes(hist):
     """Returns value-freq pairs in decreasing order of frequency.
@@ -31,7 +38,30 @@ def AllModes(hist):
 
     returns: iterator of value-freq pairs
     """
-    return []
+    items=list(hist.Items())
+    items.sort(key=lambda el:-el[1])
+    return items
+
+def CohenEffectSize(g1,g2):
+    dif=g1.mean()-g2.mean()
+    var1= g1.var()
+    var2= g2.var()
+    n1,n2=len(g1),len(g2)
+    pooled_var=(n1*var1+n2*var2)/(n1+n2)
+    d=dif/math.sqrt(pooled_var)
+    return d
+
+def ex2_4():
+    df = nsfg.ReadFemPreg()
+    firsts=df[df.birthord==1]
+    others=df[df.birthord>1]
+    firsts_lb_mean=firsts.totalwgt_lb.mean()
+    others_lb_mean=others.totalwgt_lb.mean()
+    print (firsts_lb_mean,others_lb_mean)
+    print (CohenEffectSize(others.totalwgt_lb,firsts.totalwgt_lb))
+    #Not knowing what is statistically significant, .088 is certainly larger than .029
+    #The effects between birthorder and wieght are stronger than those between 
+    #birthorder and pregnancy duration  
 
 
 def main(script):
@@ -58,4 +88,5 @@ def main(script):
 
 
 if __name__ == '__main__':
-    main(*sys.argv)
+    # main(*sys.argv)
+    ex2_4()

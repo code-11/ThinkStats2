@@ -52,9 +52,15 @@ def main():
     log_sample = InterpolateSample(df, log_upper=6.0)
 
     log_cdf = thinkstats2.Cdf(log_sample)
-    thinkplot.Cdf(log_cdf)
-    thinkplot.Show(xlabel='household income',
-                   ylabel='CDF')
+    compute(log_cdf)
+    # thinkplot.Cdf(log_cdf)
+    # thinkplot.Show(xlabel='household income',
+    #                ylabel='CDF')
+
+def compute(interp_cdf):
+    print("Mean: "+str(interp_cdf.Mean()))
+    print("Median: "+str(thinkstats2.Median(interp_cdf)))
+    print("Skew: "+str(thinkstats2.PearsonMedianSkewness(interp_cdf.Values())))
 
 
 if __name__ == "__main__":

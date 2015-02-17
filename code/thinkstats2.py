@@ -1135,7 +1135,6 @@ class Cdf(object):
             number value
         """
         return self.Value(p / 100.0)
-
     def PercentileRank(self, x):
         """Returns the percentile rank of the value x.
 
